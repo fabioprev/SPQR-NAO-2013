@@ -16,3 +16,4 @@ Util/boost/
 *.la
 *.a
 !libptracking.a
+!libode.a
