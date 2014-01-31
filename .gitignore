@@ -21,12 +21,14 @@ Util/boost/
 !libm-2.13.so
 !ld-2.13.so
 !libpthread-2.13.so
+!librt-2.13.so
 
 # Compiled Static libraries
 *.lai
 *.la
 *.a
 !libptracking.a
+!libptracking-32.a
 !libode.a
 !libc_nonshared.a
 !libsnappy.a
