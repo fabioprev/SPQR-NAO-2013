@@ -15,3 +15,4 @@ Util/boost/
 *.lai
 *.la
 *.a
+!libptracking.a
