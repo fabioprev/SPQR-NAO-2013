@@ -6,10 +6,17 @@ Util/boost/
 *.slo
 *.lo
 *.o
+!crtbeginS.o
+!crtendS.o
+!crti.o
+!crtn.o
 
 # Compiled Dynamic libraries
 *.so
 *.dylib
+!libc-2.13.so
+!libm-2.13.so
+!ld-2.13.so
 
 # Compiled Static libraries
 *.lai
@@ -17,3 +24,4 @@ Util/boost/
 *.a
 !libptracking.a
 !libode.a
+!c_nonshared.a
