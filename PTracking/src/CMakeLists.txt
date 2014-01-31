@@ -17,7 +17,7 @@ if (CMAKE_BUILD_TYPE STREQUAL "")
 endif (CMAKE_BUILD_TYPE STREQUAL "")
 
 add_definitions(-Wall)
-add_definitions(-m32)
+add_definitions(-fPIC)
 
 if (CMAKE_BUILD_TYPE STREQUAL "DEBUG")
 	add_definitions(-ggdb)

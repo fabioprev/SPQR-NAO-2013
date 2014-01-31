@@ -68,7 +68,6 @@ SimulatedNao = cppDynamicLibrary + {
       "/usr/include/QtOpenGL",
       "/usr/include/Qt",
       "$(utilDirRoot)/SimRobot/Util/ode/Linux/include",
-      "$(utilDirRoot)/gsl/include",
       "$(utilDirRoot)/PTracking/include",
       "$(utilDirRoot)/Utils"
     }
@@ -78,13 +77,12 @@ SimulatedNao = cppDynamicLibrary + {
     "$(buildDirRoot)/qtpropertybrowser/$(platform)/$(configuration)",
     "$(buildDirRoot)/libqxt/$(platform)/$(configuration)",
     "$(utilDirRoot)/libjpeg/lib",
+    "$(utilDirRoot)/PTracking/lib",
      if platform == "Linux" {
        if architecture == "x86_64" {
          "$(utilDirRoot)/snappy/lib/linux_x86_64",
        } else {
          "$(utilDirRoot)/snappy/lib/linux_x86",
-         "$(utilDirRoot)/gsl/lib",
-         "$(utilDirRoot)/PTracking/lib",
        }
     }
     if platform == "Win32" {
@@ -99,9 +97,9 @@ SimulatedNao = cppDynamicLibrary + {
   libs = {
     "Controller", "qtpropertybrowser", "snappy", "qxt"
     if platform == "Win32" { "QtCore4", "QtGui4", "QtOpenGl4", "QtSvg4", "winmm", "opengl32", "glu32", "ws2_32", "libjpeg" }
-    if platform == "Linux" { "rt", "pthread", "GLEW", "QtGui", "QtCore", "QtOpenGL", "QtSvg", "GLU", "GL", "gsl", "gslcblas", "ptracking" }
+    if platform == "Linux" { "rt", "pthread", "GLEW", "QtGui", "QtCore", "QtOpenGL", "QtSvg", "GLU", "GL", "ptracking" }
     if archName == "Linux64" { "jpeg-x64" }
-    if archName == "Linux32" { "jpeg", "gsl", "gslcblas", "ptracking" }
+    if archName == "Linux32" { "jpeg" }
   },
   cppFlags += {
     if tool == "vcxproj" {
@@ -114,7 +112,7 @@ SimulatedNao = cppDynamicLibrary + {
   }
   linkFlags += {
     //the rpath specifies a searchpath for dynamic libraries.
-    if (platform == "Linux") { " -Wl,-rpath -Wl,${ORIGIN}"}
+    if (platform == "Linux") { " -Wl,-rpath -Wl,${ORIGIN} "}
     if (platform == "MacOSX"){ " -Wl,-rpath -Wl,${ORIGIN}/../Resources/"}
     if tool == "vcxproj" {
       if configuration == "Debug" { "/NODEFAULTLIB:msvcrt.lib" }
