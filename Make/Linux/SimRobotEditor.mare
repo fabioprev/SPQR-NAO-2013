@@ -51,7 +51,9 @@ SimRobotEditor = cppDynamicLibrary + {
   },
   libs = {
     if platform == "Win32" { "QtCore4", "QtGui4" }
-    if platform == "Linux32" { "QtCore", "QtGui", "gsl", "gslcblas", "ptracking-32" }
-    if platform == "Linux64" { "QtCore", "QtGui", "gsl", "gslcblas", "ptracking" }
+    if platform == "Linux" { "QtCore", "QtGui", "gsl", "gslcblas" }
+    if platform == "Linux" { "QtCore", "QtGui", "gsl", "gslcblas" }
+    if archName == "Linux64" { "ptracking" }
+    if archName == "Linux32" { "ptracking-32" }
   },
 }
