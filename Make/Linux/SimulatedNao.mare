@@ -97,9 +97,9 @@ SimulatedNao = cppDynamicLibrary + {
   libs = {
     "Controller", "qtpropertybrowser", "snappy", "qxt"
     if platform == "Win32" { "QtCore4", "QtGui4", "QtOpenGl4", "QtSvg4", "winmm", "opengl32", "glu32", "ws2_32", "libjpeg" }
-    if platform == "Linux" { "rt", "pthread", "GLEW", "QtGui", "QtCore", "QtOpenGL", "QtSvg", "GLU", "GL", "ptracking" }
-    if archName == "Linux64" { "jpeg-x64" }
-    if archName == "Linux32" { "jpeg" }
+    if platform == "Linux" { "rt", "pthread", "GLEW", "QtGui", "QtCore", "QtOpenGL", "QtSvg", "GLU", "GL" }
+    if archName == "Linux64" { "jpeg-x64", "ptracking" }
+    if archName == "Linux32" { "jpeg", "ptracking-32" }
   },
   cppFlags += {
     if tool == "vcxproj" {

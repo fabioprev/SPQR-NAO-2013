@@ -64,7 +64,8 @@ SimRobotCore2 = cppDynamicLibrary + {
     }
   },
   libs = {
-    if platform == "Linux" { "rt", "pthread", "ode", "GLEW", "xml2", "QtGui", "QtCore", "QtOpenGL", "GLU", "GL", "gsl", "gslcblas", "ptracking" },
+    if platform == "Linux32" { "rt", "pthread", "ode", "GLEW", "xml2", "QtGui", "QtCore", "QtOpenGL", "GLU", "GL", "gsl", "gslcblas", "ptracking-32" },
+    if platform == "Linux64" { "rt", "pthread", "ode", "GLEW", "xml2", "QtGui", "QtCore", "QtOpenGL", "GLU", "GL", "gsl", "gslcblas", "ptracking" },
     if platform == "Win32" { "ode_double", "opengl32", "glu32", "glew32", "libxml2", "QtCore4", "QtGui4", "QtOpenGL4" }
   },
 

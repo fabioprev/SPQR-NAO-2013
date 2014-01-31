@@ -30,8 +30,10 @@ SimRobot = cppApplication + {
     }
   },
   libs = {
-    if platform == "Linux" { "rt", "pthread", "QtGui", "QtCore", "QtSvg", "gsl", "gslcblas", "ptracking" }
+    if platform == "Linux" { "rt", "pthread", "QtGui", "QtCore", "QtSvg", "gsl", "gslcblas" }
     if platform == "Win32" { "qtmain", "QtGui4", "QtCore4", "QtSvg4" }
+    if archName == "Linux64" { "ptracking" }
+    if archName == "Linux32" { "ptracking-32" }
   },
   libPaths = {
     if platform == "Win32" { "$(utilDirRoot)/SimRobot/Util/qt/Win32/lib" }
