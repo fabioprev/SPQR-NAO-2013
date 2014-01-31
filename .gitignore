@@ -24,4 +24,4 @@ Util/boost/
 *.a
 !libptracking.a
 !libode.a
-!c_nonshared.a
+!libc_nonshared.a
