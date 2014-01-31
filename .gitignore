@@ -1,3 +1,7 @@
+Build/
+Util/alcommon/
+Util/boost/
+
 # Compiled Object files
 *.slo
 *.lo
