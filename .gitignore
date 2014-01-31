@@ -10,6 +10,9 @@ Util/boost/
 !crtendS.o
 !crti.o
 !crtn.o
+!crt1.o
+!crtbegin.o
+!crtend.o
 
 # Compiled Dynamic libraries
 *.so
@@ -17,6 +20,7 @@ Util/boost/
 !libc-2.13.so
 !libm-2.13.so
 !ld-2.13.so
+!libpthread-2.13.so
 
 # Compiled Static libraries
 *.lai
@@ -25,3 +29,10 @@ Util/boost/
 !libptracking.a
 !libode.a
 !libc_nonshared.a
+!libsnappy.a
+!libgsl.a
+!libgslcblas.a
+!libjpeg-atom.a
+!libjpeg.a
+!libjpeg-x64.a
+!libpthread_nonshared.a
