@@ -654,7 +654,12 @@ void GlobalEstimator::waitAgentMessages()
 	}
 	while (theRobotInfo.number == 0);
 	
-	binding = receiverSocket.bind(agentPort);
+	if (SystemCall::getMode() == SystemCall::simulatedRobot)
+	{
+   	        agentPort = 12000 + theRobotInfo.number;
+	        binding = receiverSocket.bind(agentPort);
+        }
+	else binding = receiverSocket.bind(agentPort);
 	
 	if (!binding)
 	{
